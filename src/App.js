@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import HomePageRoute from './routes/HomePage';
+import uuid from 'uuid'
+
+if (!localStorage.getItem("testing_user_id"))
+  localStorage.setItem("testing_user_id", uuid.v4())
 
 function App() {
   return (
@@ -17,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <HomePageRoute />
       </header>
     </div>
   );
