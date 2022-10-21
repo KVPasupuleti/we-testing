@@ -1,6 +1,8 @@
+import { Route } from 'react-router'
 import logo from './logo.svg';
 import './App.css';
 import HomePageRoute from './routes/HomePage';
+import NotificationRedirectionRoute from './routes/NotificationRedirectionRoute';
 import uuid from 'uuid'
 
 if (!localStorage.getItem("testing_user_id"))
@@ -11,18 +13,18 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <HomePageRoute />
+        <Route
+          exact
+          path={'/'}
+          key={'HOME_PAGE_ROUTE'}
+          component={HomePageRoute}
+        />
+        <Route
+          exact
+          path={'/notification-redirection'}
+          key={'NOTIFICATION_REDIRECTION_ROUTE'}
+          component={NotificationRedirectionRoute}
+        />
       </header>
     </div>
   );

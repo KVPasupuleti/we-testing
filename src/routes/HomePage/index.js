@@ -17,6 +17,7 @@ class HomePageRoute extends Component {
     render() {
         return (
             <div>
+                <p>HOME PAGE</p>
                 <HomeComponent />
             </div>
         );
